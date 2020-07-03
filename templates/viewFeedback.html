@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing website detection</title>
+    <link rel="stylesheet" href="/static/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/Feedback.css">
+    <link rel="stylesheet" href="../static/js/Feedback.js">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="../static/css/aboutus.css">
+    <link rel="stylesheet" href="../static/css/adminAccount.css">
+    <link rel="stylesheet" href="../static/css/viewFeedbacks.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="left">
+            <a href="/"><h2>Phishing website detection System</h2></a>
+        </div>
+
+        <div class="right">
+            <ul>
+                <li><a href="/">ViewUsers </a></li>
+                <li><a href="/adminAccount/viewFeedback" class="active">ViewFeedbacks </a> </li>
+                <li><a href="/adminAccount/blocklist">BlockList</a> </li>
+                <li><a href="/#">Logout</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sectionFeedbacks">
+        <h1 class="h-primary">
+            Feedbacks
+        </h1>
+    </div>
+
+    <div class="userFeedbacks">
+        <div class="head">Email</div>
+        <div class="head">Feedback</div>
+        <div class="head">Date</div>
+        <div class="head">Rating</div>
+
+        {% for i in Feedbacks %}
+        <div class="items">{{i[0]}}</div>
+        <div class="items">{{i[1]}}</div>
+        <div class="items">{{i[2]}}</div>
+        <div class="items">{{i[3]}}</div>
+        
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="social">
+            <a href="https://instagram.com" class="fab fa-instagram" target="_blank"></a>
+            <a href="https://facebook.com" class="fab fa-facebook" target="_blank"></a>
+            <a href="https://twitter.com" class="fab fa-twitter" target="_blank"></a>
+        </div>
+    </footer>
+
+</html>

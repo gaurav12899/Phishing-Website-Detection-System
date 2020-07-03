@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing website detection</title>
+    <link rel="stylesheet" href="/static/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/Feedback.css">
+    <link rel="stylesheet" href="../static/js/Feedback.js">
+ 
+    <link rel="stylesheet" href="../static/css/aboutus.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+
+
+
+
+</head>
+<body >
+    
+<nav>
+    <div class="left">
+        <a href="/"><h2>Phishing website detection System</h2></a>
+    </div>
+
+    <div class="right">
+        <ul>
+            <li><a href="/" >Home </a></li>
+            <li><a href="/Aboutus" >About Us </a> </li>
+            <li><a href="/Feedback" class="active">Feedback </a> </li>
+            <li><a href="/Admin">Admin </a> </li>
+            <li><a href="/Faq">FAQ's </a> </li>
+        </ul>
+    </div>
+    
+</nav>
+
+
+
+<div class="sectionAFeedback">
+        <h1 class="h-primary">
+            Feedback
+        </h1>
+</div>
+
+<div class="feedback">
+      <form action="Feedback" method="POST" >
+
+          <input type="email" name="email" required='require' placeholder="Email">
+ 
+          <textarea name="Feedback" id="" cols="30" rows="7" required='require' placeholder="Feedback" ></textarea>
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5"/>
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>   
+            {% with messages= get_flashed_messages() %}
+            {% if messages %}
+              {%for message in messages%}
+              
+          <div style="background-color:slategray; height:40px ;width: 600px; text-align: center; display:flex;">                         
+              <a class="close" href="/Feedback" style="background-color: red; height:20px; width:100px;align-content:center;padding:10px;">close</a>      
+              <p style=" height:20px; align-content:center;padding:10px;">{{message}}</p>
+            </div>
+
+              {% endfor %}
+          {%endif%}
+        {% endwith %}  
+
+        <button type="submit" class="button">Submit</button>
+    </div>
+          
+      
+      </form>  
+      
+</div>
+<footer>
+    <div class="social">
+       <a href="https://instagram.com" class="fab fa-instagram" target="_blank"></a>
+        <a href="https://facebook.com" class="fab fa-facebook" target="_blank"></a>
+       <a href="https://twitter.com" class="fab fa-twitter"  target="_blank"></a>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing website detection</title>
+    <link rel="stylesheet" href="/static/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/aboutus.css">
+    <link rel="stylesheet" href="../static/js/main.js">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    
+
+<nav>
+    <div class="left">
+        <a href="/"><h2>Phishing website detection System</h2></a>
+    </div>
+
+    <div class="right">
+        <ul>
+            <li><a href="/" class="active">Home </a></li>
+            <li><a href="/Aboutus">About Us </a> </li>
+            <li><a href="/Feedback">Feedback </a> </li>
+            <li><a href="/Admin">Admin </a> </li>
+            <li><a href="/Faq">FAQ's </a> </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="sectionHeader">
+     
+    </div>
+
+
+    <div class="searchBox">
+        <form action='/main.html' , method="POST" , id="form1", onsubmit="chkFrBlnk()">
+            <h1>Place your website here</h1>
+            <input type="text" name="website_name" class="website" placeholder="website" required>
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </div>
+
+    <div class="result">
+        <h1>{{Results}}</h1>
+    </div>
+
+
+
+    <footer>
+        <div class="social">
+        
+       <a href="https://instagram.com" class="fab fa-instagram" target="_blank"></a>
+       <a href="https://facebook.com" class="fab fa-facebook" target="_blank"></a>
+      <a href="https://twitter.com" class="fab fa-twitter"  target="_blank"></a></div>
+    
+    </footer>
+    </body>
+    <script src="/static/Js/main.js"></script>
+    </html>

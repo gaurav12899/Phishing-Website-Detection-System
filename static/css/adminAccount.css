@@ -1,0 +1,41 @@
+*{
+    text-align: center;
+    font-size: bold;
+    
+}
+
+
+table {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    margin-top: 40px;
+}
+
+th,td{
+
+    padding: 8px;
+}
+
+th {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color:orangered;
+    color: white;
+}
+tr:nth-child(even){
+    background-color:orange;
+    color:white
+}
+
+tr:nth-child(odd){
+    background-color:rgb(220, 210, 210);
+    color: black;
+    
+}
+tr:hover{
+    background-color:royalblue;
+  
+}
+

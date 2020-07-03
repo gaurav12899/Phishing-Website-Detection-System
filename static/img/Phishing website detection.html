@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://127.0.0.1:5500/templates/feedback.html?email=&Feedback=&rate=3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing website detection</title>
+    
+    
+    
+    
+    
+
+<link rel="stylesheet" href="./Phishing website detection_files/all.min.css"><link rel="stylesheet" href="./Phishing website detection_files/main.css"><link rel="stylesheet" href="./Phishing website detection_files/Feedback.css"><link rel="stylesheet" href="./Phishing website detection_files/aboutus.css"><link href="./Phishing website detection_files/icon" rel="stylesheet"></head>
+<body>
+    
+<nav>
+    <div class="left">
+        <h2>Phishing website detection System</h2>
+    </div>
+
+    <div class="right">
+        <ul>
+            <li><a href="http://127.0.0.1:5500/" class="active">Home </a></li>
+            <li><a href="http://127.0.0.1:5500/Aboutus">About Us </a> </li>
+            <li><a href="http://127.0.0.1:5500/Feedback">Feedback </a> </li>
+            <li><a href="http://127.0.0.1:5500/Admin">Admin </a> </li>
+            <li><a href="http://127.0.0.1:5500/Faq">FAQ's </a> </li>
+        </ul>
+    </div>
+    
+</nav>
+
+
+
+<div class="sectionAFeedback">
+        <h1 class="h-primary">
+            Feedback
+        </h1>
+</div>
+
+<div class="feedback">
+      <form action="http://127.0.0.1:5500/templates/feedback.html">
+          <label for="email">Email</label>
+          <input type="email" name="email">
+          <label for="Feedback">Feedback</label>
+          <textarea name="Feedback" id="" cols="30" rows="10"></textarea>
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5">
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4">
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3">
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2">
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1">
+            <label for="star1" title="text">1 star</label>
+          </div>
+      
+          <button type="submit">Submit</button>
+      </form>  
+      
+</div>
+<footer>
+    <div class="social">
+       <a href="https://instagram.com/" class="fab fa-instagram" target="_blank"></a>
+        <a href="https://facebook.com/" class="fab fa-facebook" target="_blank"></a>
+       <a href="https://twitter.com/" class="fab fa-twitter" target="_blank"></a>
+    </div>
+</footer>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
