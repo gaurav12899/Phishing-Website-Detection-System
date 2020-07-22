@@ -1,8 +1,0 @@
-Flask==1.1.1
-gunicorn==19.9.0
-jinja2=2.10.1
-numpy>=1.9.2
-scipy>=0.15.1
-scikit-learn>=.18
-matplotlib>=1.4.3
-pandas>=.19
