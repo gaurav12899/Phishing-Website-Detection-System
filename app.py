@@ -1,3 +1,6 @@
+# CREATE TABLE Feedback(email varchar(100) PRIMARY KEY , feedback varchar(10000), Date date, rating int(10) );
+
+
 from flask import Flask,render_template,request,redirect,session,url_for,flash
 
 from datetime import date
@@ -10,8 +13,11 @@ import sys
 from feature_extraction import generate_url_dataset
 import mysql.connector
 #------------------------------------------------------------------
-mydb=mysql.connector.connect(user=cr.user, password=cr.password,
-                              host=cr.host)
+# mydb=mysql.connector.connect(user=cr.user, password=cr.password,
+#                               host=cr.host)
+mydb=mysql.connector.connect(user="root", password="gaurav750@",host="localhost",database='PhishingDatabase')
+
+
 mycursor=mydb.cursor()
 
 mycursor.execute("USE PhishingDatabase")
@@ -42,7 +48,7 @@ def before_request():
 
 @app.route('/')
 def home():
-    return render_template("main.html")
+    return render_template("index.html")
 
 @app.route('/Aboutus')
 def aboutus():
@@ -59,7 +65,7 @@ def admin():
     if request.method=="POST":
         email=request.form.get('email')
         password=request.form.get('password')
-        
+        print(email,password)
         query="select * from admin where email ='" + email + "' and password= '" + password + "';"
         mycursor.execute(query)
         
@@ -147,18 +153,19 @@ def getvalue():
     website =  request.form['website_name']
     url_feature=generate_url_dataset(website)
     url_feature=np.array(url_feature).reshape(1,-1)
-    print(website)
-    print(url_feature)
+    # print(website)
+    # print(url_feature)
     mycursor.execute('''select * from phisingtable where website='%s' '''%website)
     result=mycursor.fetchall()
     
     if result:
-        result=f"{website} is Phishing website."
+        result=f"{website} is a Phishing website."
     else:    
         prediction= model.predict(url_feature)
         if(prediction[0]==-1):
             try:      
                 Today=date.today() 
+                print(Today)
                 statement="INSERT INTO phisingtable(website,Date) VALUES(%s,%s)"
                 val=(website,Today)
                 mycursor.execute(statement,val)
@@ -171,7 +178,7 @@ def getvalue():
         else:
             result=f"{website} is Legitimate website."
 
-    return render_template("main.html",Results=result,)
+    return render_template("index.html",Results=result,)
 
 
 
