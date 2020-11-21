@@ -15,7 +15,7 @@ import mysql.connector
 #------------------------------------------------------------------
 # mydb=mysql.connector.connect(user=cr.user, password=cr.password,
 #                               host=cr.host)
-mydb=mysql.connector.connect(user="root", password="gaurav750@",host="localhost",database='PhishingDatabase')
+mydb=mysql.connector.connect(user="root", password="",host="",database='PhishingDatabase')
 
 
 mycursor=mydb.cursor()
